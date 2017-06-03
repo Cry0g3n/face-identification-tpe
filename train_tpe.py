@@ -29,7 +29,7 @@ dev_protocol = np.load('./data/dev_protocol.npy')
 train_emb = bottleneck.predict(train_x, batch_size=256)
 dev_emb = bottleneck.predict(dev_x, batch_size=256)
 
-del train_x
+# del train_x
 
 pca = PCA(n_out)
 pca.fit(train_emb)
@@ -58,7 +58,7 @@ positives = train_emb[positives_inds]
 n_anchors = len(anchors_inds)
 
 
-NB_EPOCH = 5000
+NB_EPOCH = 50
 COLD_START = NB_EPOCH
 BATCH_SIZE = 4
 BIG_BATCH_SIZE = 512

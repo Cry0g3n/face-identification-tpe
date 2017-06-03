@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.decomposition import PCA
 
 from cnn import build_cnn
 from tpe import build_tpe
@@ -23,11 +24,11 @@ dev_emb = bottleneck.predict(dev_x, batch_size=256)
 
 del train_x
 
-# pca = PCA(n_out)
-# pca.fit(train_emb)
-# W_pca = pca.components_
-# print(W_pca.shape)
-# np.save('data/w_pca', W_pca)
+pca = PCA(n_out)
+pca.fit(train_emb)
+W_pca = pca.components_
+print(W_pca.shape)
+np.save('data/w_pca', W_pca)
 
 W_pca = np.load('data/w_pca.npy')
 

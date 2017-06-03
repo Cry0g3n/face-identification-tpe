@@ -10,7 +10,7 @@ from cnn import build_cnn
 
 WEIGHTS_DIR = './data/weights/'
 
-NB_EPOCH = 1024
+NB_EPOCH = 50
 BATCH_SIZE = 32
 
 AUGMENTATION = True
